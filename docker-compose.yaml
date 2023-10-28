@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./app
+    command: ./asgi.sh
+    volumes:
+      - ./app/:/usr/src/app/
+    ports:
+      - 8000:9090
+    env_file:
+      - ./.env.dev
